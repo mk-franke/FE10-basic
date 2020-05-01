@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration-form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body class="container-sm">
+
+    <h1 class="header" style="text-align: center;">Registration</h1>
+    <form>
+        <div class="row">
+            <!--Левая часть - для заполнения-->
+            <div class="col-sm-8">
+                <div class="form-group row">
+                    <label for="inputUserName" class="col-sm-2 col-form-label">Username</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control " id="inputUserName" placeholder="Username">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control " id="inputEmail" placeholder="example@mail.de">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control " id="inputFirstName"
+                            placeholder="Enter your First Name">
+                    </div>
+                    <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control " id="inputLastName" placeholder="Enter your Last Name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputDateBirth" class="col-sm-2 col-form-label">Date of birth</label>
+                    <div class="col-sm-4">
+                        <input type="date" class="form-control " id="inputDateBirth" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputLastName" class="col-sm-2 col-form-label">Sex</label>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Male
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Female
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
+                                value="option3" disabled>
+                            <label class="form-check-label" for="exampleRadios3">
+                                Third gender
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputAbout" class="col-sm-2 col-form-label">About You</label>
+                    <div class="col-sm-12 green-border-focus ">
+                        <!--по умолчанию и так blue-border-focus -->
+                        <textarea class="form-control" id="inputAbout"
+                            placeholder="Why you wants to register?"></textarea>
+                        <small id="aboutHelp" class="form-text text-muted">Why you wants to register?</small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control " id="inputPassword"
+                            placeholder="Enter your password">
+                    </div>
+                    <label for="inputConfirm" class="col-sm-2 col-form-label">Confirm</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control " id="inputConfirm"
+                            placeholder="Confirm your password">
+                    </div>
+                </div>
+            </div>
+            <!--Правая часть с фото-->
+            <div class="col-sm-4">
+
+                <img src="img/default-img-1.jpg" class="rounded" alt="your_avatar" title="Your avatar" name="avatar"
+                    width="150">
+                <br>
+                <br>
+
+                <div class="form-group">
+                    <!-- <label for="exampleFormControlFile1">Example foto input</label> -->
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <!--При попытке изменить цвет только кнопке "выбрать файл" - меняется цвет на синий всей строке(
+                        а хотелось бы, чтобы "файл не выбран" - оставался обычным.
+                    Или не заморачиваться с бутстрапом? а когда будем больше знать - можно сделать обычную кнопку(любго цветв) и позвязать выбор файла
+                    <input type="file" class="btn btn-file btn-primary form-control-file" id="exampleFormControlFile1">-->
+                </div>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-outline-primary">Submit</button>
+        <button type="reset" class="btn btn-outline-success">Reset</button>
+        <button type="button" class="btn btn-outline-danger">Cancel</button>
+    </form>
+
+
+
+</body>
+
+</html>
