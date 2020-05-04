@@ -8,7 +8,7 @@
         User registration form
     </title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/stylesheet.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body class="container">
@@ -85,15 +85,17 @@
             <textarea class="form-control" id="validationTooltipTextarea1" aria-describedby="validationTooltipTextarea1"
                 placeholder="Yout text" required rows="3"></textarea>
         </div>
-        <div class="custom-file">
-            <input type="file" class="custom-file-input" id="validationTooltipcustomFile"
-                aria-describedby="validationTooltipcustomFile" required>
-            <label class="custom-file-label" for="validationTooltipcustomFile">Choose file</label>
+        <div class="form-group">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="validationTooltipcustomFile"
+                    aria-describedby="validationTooltipcustomFile" required>
+                <label class="custom-file-label" for="validationTooltipcustomFile">Choose file</label>
+            </div>
         </div>
-        <button class="btn btn-primary" type="submit">Submit form</button>
-        <button class="btn btn-primary" type="reset">Reset form</button>
-
-
+        <div class="form-group form-buttons">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+            <button class="btn btn-primary" type="reset">Reset form</button>
+        </div>
     </form>
 
 
