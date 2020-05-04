@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        User registration form
+    </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/stylesheet.css" rel="stylesheet">
+</head>
+
+<body class="container">
+    <h1>Registration form</h1>
+    <form class="needs-validation" novalidate>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="validationTooltip01">First name</label>
+                <input type="text" class="form-control" id="validationTooltip01" placeholder="Your First name" value=""
+                    required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationTooltip02">Last name</label>
+                <input type="text" class="form-control" id="validationTooltip02" placeholder="Your Last name" value=""
+                    required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationTooltipUsername">Username</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                    </div>
+                    <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Your Username"
+                        aria-describedby="validationTooltipUsernamePrepend" required>
+                </div>
+            </div>
+        </div>
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                    <option selected>Choose your gender...</option>
+                    <option value="1">male</option>
+                    <option value="2">female</option>
+                </select>
+                <div class="col-auto my-1">
+                    <div class="custom-control custom-checkbox mr-sm-2">
+                        <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                        <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="validationTooltipТехт">Date of birth</label>
+            <input type="text" class="form-control" name="birthday" id="validationTooltipТехт" placeholder="dd/mm/yyyy"
+                aria-describedby="validationTooltipТехт" required>
+            <small class="form-text text-muted">Please, enter your date of birth</small>
+        </div>
+        <div class="form-group">
+            <label for="validationTooltipEmail1">Email address</label>
+            <input type="email" class="form-control" id="validationTooltipEmail1" placeholder="your@googlemail.com"
+                aria-describedby="validationTooltipEmail1" required>
+            <div class="invalid-tooltip">
+            </div>
+            <small class="form-text text-muted">Please, enter your E-mail address</small>
+        </div>
+        <div class="form-group">
+            <label for="validationTooltipPassword1">Password</label>
+            <input type="password" class="form-control" id="validationTooltipPassword1" placeholder="Your password"
+                aria-describedby="validationTooltipPassword1" required>
+            <small id="emailHelp" class="form-text text-muted">Your password must be 8-20 characters long,
+                contain letters and numbers, and must not contain spaces, special characters, or emoji.</small>
+        </div>
+        <div class="form-group">
+            <label for="validationTooltipPassword1">Confirm password</label>
+            <input type="password" class="form-control" id="validationTooltipPassword1"
+                placeholder="Рepeat your password" aria-describedby="validationTooltipPassword1" required>
+            <small id="emailHelp" class="form-text text-muted">Your password must be 8-20 characters long,
+                contain letters and numbers, and must not contain spaces, special characters, or emoji.</small>
+        </div>
+        <div class="form-group">
+            <label for="validationTooltipTextarea1">Your text</label>
+            <textarea class="form-control" id="validationTooltipTextarea1" aria-describedby="validationTooltipTextarea1"
+                placeholder="Yout text" required rows="3"></textarea>
+        </div>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="validationTooltipcustomFile"
+                aria-describedby="validationTooltipcustomFile" required>
+            <label class="custom-file-label" for="validationTooltipcustomFile">Choose file</label>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit form</button>
+        <button class="btn btn-primary" type="reset">Reset form</button>
+
+
+    </form>
+
+
+    <script>
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+
+    <script>
+        $(function () {
+            $('input[name="birthday"]').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 1901,
+                maxYear: parseInt(moment().format('YYYY'), 10)
+            }, function (start, end, label) {
+                var years = moment().diff(start, 'years');
+                alert("You are " + years + " years old!");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
