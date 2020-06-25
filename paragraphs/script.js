@@ -1,17 +1,11 @@
-const colors = ['red', 'green', 'blue'];
+const colors = ['white', 'red', 'green', 'blue'];
+//                 0       1       2        3  
 
-console.log(this);
-
-document.querySelector('p').addEventListener('click', function() {
-    this.style['background-color'] = 'red';
-});
-
-const person = {
-    'name-of-person':'Vasya',
-    age: 25
-}
-
-function printField(field) {
-    console.log(person[field]);
-}
+let currentColor = 0;
+document.querySelectorAll('p').forEach(function(element) {
+    element.addEventListener('click', function() {
+        currentColor++;
+        this.style['background-color'] = colors[currentColor % colors.length];
+    });
+})
 
