@@ -71,6 +71,22 @@ function renderFeedbackTable(data) {
     document.querySelector('table tbody').innerHTML = tbody;
 }
 
+const asc = (field) => {
+    return (a, b) => {
+        if (a[field] > b[field]) return 1;
+        if (a[field] < b[field]) return -1;
+        return 0;
+    }
+};
+
+const desc = (field) => {
+    return (a, b) => {
+        if (a[field] > b[field]) return -1;
+        if (a[field] < b[field]) return 1;
+        return 0;
+    }
+}
+
 function sort(field) {
     let sortedData = [...data];
 
@@ -80,18 +96,10 @@ function sort(field) {
 
     sorted.field = field;
     if (sorted.order === 0) {
-        sortedData.sort((a, b) => {
-            if (a[field] > b[field]) return 1;
-            if (a[field] < b[field]) return -1;
-            return 0;
-        });
+        sortedData.sort(asc(field));
         sorted.order = 1;
     } else if (sorted.order === 1) {
-        sortedData.sort((a, b) => {
-            if (a[field] > b[field]) return -1;
-            if (a[field] < b[field]) return 1;
-            return 0;
-        });
+        sortedData.sort(desc(field));
         sorted.order = -1;
     } else {
         sorted.order = 0;
