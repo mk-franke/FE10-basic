@@ -16,3 +16,11 @@ document.querySelectorAll('p').forEach(function(element, i) {
     element.addEventListener('click', createEventListener(i));
 })
 
+var nodes = document.getElementsByTagName('button');
+for (var i = 0; i < nodes.length; i++) {
+   nodes[i].addEventListener('click', function(x) {
+        return function() {
+        console.log('You clicked element #' + x);
+        }
+   }(i));
+}
