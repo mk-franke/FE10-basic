@@ -7,7 +7,11 @@ function createEventListener(i) {
     return function() {
         currentColor++;
         console.log("Click on " + i + " paragraph, currentColor = " + currentColor);
-        this.style['background-color'] = colors[currentColor % colors.length];
+        if(i%2==0) {
+            this.style['color'] = colors[currentColor % colors.length];
+        } else {
+            this.style['background-color'] = colors[currentColor % colors.length];
+        }
     }
 }
 
@@ -15,4 +19,3 @@ document.querySelectorAll('p').forEach(function(element, i) {
     console.log(i);
     element.addEventListener('click', createEventListener(i));
 })
-
