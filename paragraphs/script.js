@@ -12,7 +12,7 @@ function createEventListener(i) {
 }
 
 document.querySelectorAll('p').forEach(function(element, i) {
-    console.log(i);
+    //console.log(i);
     element.addEventListener('click', createEventListener(i));
 })
 
