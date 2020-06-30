@@ -7,20 +7,25 @@ Print number not to the console, but below the button.
 */
 
 document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('click', function() {
-        console.log(getRandomNonRepetitive());
-    })
+    button.addEventListener('click', getEventListener())
 });
 
-function getRandomNonRepetitive() {
+function getEventListener() {
+    const getRandomNonRepetitiveNumber = getRandomNonRepetitiveNumberGenerator(0, 10);
+    return function() {
+        console.log(getRandomNonRepetitiveNumber())
+    }
+}
+
+function getRandomNonRepetitiveNumberGenerator(min, max) {
     let numbers = {};
     return function() {
-        if (Object.keys(numbers).length === 9)
+        if (Object.keys(numbers).length === (max - min))
             throw new Error('No numbers left...')
-        let number = getRndInteger(0, 10);
+        let number = getRndInteger(min, max);
         while(numbers[number]) {
             console.log(numbers);
-            number = getRndInteger(0, 10);
+            number = getRndInteger(min, max);
         }
         numbers[number] = true;
         return number;
