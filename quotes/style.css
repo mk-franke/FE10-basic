@@ -1,5 +1,9 @@
-.btn-primary {
+.btn.btn-primary, .btn.btn-primary:hover {
     background-color: peru;
+}
+
+.btn.btn-primary:active:focus {
+    background-color: rgb(205, 90, 80);
 }
 
 blockquote {
